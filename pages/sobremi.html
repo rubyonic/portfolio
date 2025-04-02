@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí</title>
+  <link rel="stylesheet" href="../estilos/styles.css">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+</head>
+<body id="sobre-mi">
+    <nav class="menu">
+        <a href="../index.html" class="link-menu">menu</a>
+    </nav>
+    <header id="header">
+        <div class="info">
+            <h1>
+                <span class="letra">R</span>
+                <span>UBIÑO</span>
+            </h1>
+            <h2>FRANCIS</h2>
+            <p class="parrafo1">Hola, soy diseñador y <br> desarrollador web.</p>
+            <p class="parrafo2">Bienvenido a mi <br> portafolio.</p>
+        </div>
+        <img src="../images/yo.png" alt="Mi foto">
+    </header>
+    
+    <div id="facultades" class="facultades">
+        <div class="rectangulo1">
+            <div class="titulo">
+                <span class="letra-m">M</span>is facultades:
+            </div>
+            <ul class="facultades-lista">
+                <li class="facultad" id="html" data-info="Apasionado del desarrollo frontend, con habilidades en HTML, CSS y maquetación web. Enfoque en diseños accesibles, optimizados y visualmente atractivos. Siempre buscando mejorar y crear experiencias únicas">1. HTML/CSS</li>
+                <li class="facultad" id="wordpress" data-info="Soy un desarrollador con gran habilidad en JavaScript, creando soluciones interactivas y dinámicas. Manejo funciones, arrays, manipulación del DOM y optimización de rendimiento para desarrollar aplicaciones web modernas y atractivas.">2. JavaScript</li>
+                <li class="facultad" id="diseño" data-info="Tengo experiencia utilizando Bootstrap para crear diseños web responsivos y modernos. Aprovecho sus componentes y su sistema de rejilla para construir interfaces limpias y funcionales de manera rápida y eficiente">3. Bootstrap</li>
+            </ul>
+        </div>
+        <div class="rectangulo2">
+            <p id="info-texto">Pasa el ratón por las facultades para ver más información.</p>
+        </div>
+    </div>
+
+    <div id="trabajitos" class="trabajitos">
+        <div class="proyectitos">
+            <img src="../images/muse.jpg" alt="Proyecto 1" class="imagen-proyecto">
+            <div class="texto-proyecto derecha">
+                <h3>
+                    <span class="letra-r">R</span>ubyseum
+                </h3>
+                <p>Museo de videojuegos estilo retro<br>con estilo pixelado, <br>¡todo un deleite, claro!</p>
+            </div>
+        </div>
+
+        <div class="proyectitos2">
+            <img src="../images/jar.jpg" alt="Proyecto 2" class="imagen-proyecto">
+            <div class="texto-proyecto izquierda">
+                <h3>
+                    <span class="letra-r">B</span>alamb
+                </h3>
+                <p>Una web magica sobre un <br> colegio magico. <br>¿He dicho magia? </p>
+            </div>
+        </div>
+
+        <div class="proyectitos">
+            <img src="../images/zafar.jpg" alt="Proyecto 1" class="imagen-proyecto">
+            <div class="texto-proyecto derecha">
+                <h3>
+                    <span class="letra-r">S</span>afari
+                </h3>
+                <p>Safari Pokémon donde<br>podras atrapar 151 Pokemon<br>y gestionar tu personal. Python.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contactame">
+        <p class="texto-izquierda">¿Quieres saber más?</p>
+        <div class="boton-derecha">
+            <a href="../pages/contacto.html">
+                <button>Contáctame</button>
+            </a>
+        </div>
+        <hr class="linea-centro">
+      </div>
+
+      <footer id="footer">
+        <div class="footer-content">
+          <div class="footer-left">
+            <p>© 2025 - Derechos reservados<br>Francisco Manuel Rubiño Prieto</p>
+          </div>
+          <div class="footer-right">
+            <a href="https://www.linkedin.com/in/franciscorubino/" target="_blank">Linkedin</a>
+            <br>
+            <a href="../archivos/FranciscoCV.pdf" download="Francisco_CV.pdf" target="_blank">C.V.</a>
+          </div>
+        </div>
+      </footer>
+      <div class="imagenfooter">
+        <img src="../images/foot5.png" alt="">
+      </div>
+      
+      <div class="menu-lateral">
+        <a href="#sobre-mi" class="punto"></a>
+        <a href="#facultades" class="punto"></a>
+        <a href="#trabajitos" class="punto"></a>
+      </div>
+    
+    <script>
+            const facultades = document.querySelectorAll('.facultad');
+            const infoTexto = document.getElementById('info-texto');
+
+            facultades.forEach((facultad) => {
+            facultad.addEventListener('mouseover', () => {
+                infoTexto.textContent = facultad.getAttribute('data-info');
+            });
+
+            facultad.addEventListener('mouseout', () => {
+                infoTexto.textContent = 'Pasa el ratón por las facultades para ver más información.';
+            });
+            });
+
+            document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', (event) => {
+                event.preventDefault(); 
+                
+                const targetId = item.getAttribute('href').substring(1); 
+                const targetElement = document.getElementById(targetId);
+
+                window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+                });
+            });
+            });
+
+    </script>
+</body>
+</html>
